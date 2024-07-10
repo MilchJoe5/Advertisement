@@ -1,0 +1,40 @@
+import webbrowser
+import os
+
+# HTML-Inhalt erstellen
+html_content = """
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Werbung</title>
+    <style>
+        .advert-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .advert-image {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="advert-container">
+        <a href="https://www.amazon.de/720%C2%B0DGREE-Trinkflasche-uberBottle-softTouch-Sieb/dp/B0888TY4PD?pd_rd_w=kkfmy&content-id=amzn1.sym.23b89adb-9909-4f81-be6e-d852030876a5&pf_rd_p=23b89adb-9909-4f81-be6e-d852030876a5&pf_rd_r=RCG11EZ3WJWFW90RESJM&pd_rd_wg=GL12j&pd_rd_r=1ea0b9fb-4ac0-4444-9f25-01b76a101eb3&pd_rd_i=B0888TY4PD&th=1&linkCode=ll1&tag=uberbottle-21&linkId=f92b5d0750b3ada4c765b059978c3d7c&language=de_DE&ref_=as_li_ss_tl" target="_blank">
+            <img src="https://m.media-amazon.com/images/I/61SJL2UADsL._AC_SX679_.jpg" alt="Werbung" class="advert-image">
+        </a>
+    </div>
+</body>
+</html>
+"""
+
+# HTML-Datei speichern
+file_path = 'werbung.html'
+with open(file_path, 'w', encoding='utf-8') as file:
+    file.write(html_content)
+
+# HTML-Datei im Standard-Webbrowser öffnen
+webbrowser.open('file://' + os.path.realpath(file_path))
